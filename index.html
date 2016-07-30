@@ -12,6 +12,15 @@
 function render(movieArray, displayWide) {
   // This function will get called automagically with the return call.
 
+  //Bonus question of readme
+  //sort movies in alphabetical order by title
+  function sortObjs(obj) {
+    return obj.sort(function(a,b){
+      return a.name > b.name;
+    })
+  }
+  sortObjs(movieArray)
+
   // add all the movies together in one long string that will be return and displayed
   var allMovies = ""
 
