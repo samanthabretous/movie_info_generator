@@ -15,13 +15,14 @@ function render(movieArray, displayWide) {
   // add all the movies together in one long string that will be return and displayed
   var allMovies = ""
   movieArray.forEach(function (a) {
-    allMovies += renderMovie(a)
+    allMovies += renderMovieCompact(a)
   })
 
   return allMovies
 
 }
 
+//step 2 of readme
 function renderMovie(movie) {
 
   // generate a list of class member in the repsective html tag
@@ -45,6 +46,25 @@ function renderMovie(movie) {
 
   console.log(movie)
   return '<div class="movie animation">' + movieTitle + movieInfo + cast(movie) + movieDescription + '</div>'
+}
+
+//step 3 of readme
+//create compact version of movie info
+function renderMovieCompact(movie) {
+  var title = '<span class="name">' + movie.name + '</span> '
+  var year = '<span class="year">' + movie.year + '</span> '
+  var genre = '<span class="genre">' + movie.genre + '</span> '
+  var cast = "starring: "
+  for (var i = 0; i < movie.cast.length; i++) {
+    if ( i !== movie.cast.length -1 ){
+      cast += movie.cast[i] + ", "
+    } else {
+      cast += movie.cast[i] 
+    }
+    
+  }
+
+  return '<li class="movie animation">' + title + year + genre + cast + '</li>'
 }
 
 
