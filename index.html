@@ -1,39 +1,54 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Week 2, Homework</title>
+  <title>Movie Info Generator</title>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="js/main.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="js/main.js"></script>
 
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
 
-    <script>
+  <script>
 function render(movieArray, displayWide) {
   // This function will get called automagically with the return call.
 
-  function cast(array){
+  // add all the movies together in one long string that will be return and displayed
+  var allMovies = ""
+  movieArray.forEach(function (a) {
+    allMovies += renderMovie(a)
+  })
+
+  return allMovies
+
+}
+
+function renderMovie(movie) {
+
+  // generate a list of class member in the repsective html tag
+  function cast(object){
     var castStr = ''
-    for(var i = 0; i < array[0].cast.length; i++) {
-      castStr += '<li class="cast">' + array[0].cast[i] + '</li>';
+    for(var i = 0; i < object.cast.length; i++) {
+      castStr += '<li class="cast">' + object.cast[i] + '</li>';
     }
     return '<div> Starring: <ul>' + castStr + '</ul> </div>';
   }
 
   // wrap movie title within a h3 tag
-  var movieTitle = '<h3 class="name">' + movieArray[0].name + '</h3>';
+  var movieTitle = '<h3 class="name">' + movie.name + '</h3>';
 
   // wrap the release date and genre in a paragraph.
   // span tag is wrapped around the render infomation from object
-  var movieInfo = '<p> Release date: <span class="year">' + movieArray[0].year + '</span>, Genre: <span class="genre">' + movieArray[0].genre + '</span>.' + '</p>'
+  var movieInfo = '<p> Release date: <span class="year">' + movie.year + '</span>, Genre: <span class="genre">' + movie.genre + '</span>.' + '</p>'
   
   // wrap the movie description in sp
-  var movieDescription = '<p class="description">' + movieArray[0].description + '</p>'
+  var movieDescription = '<p class="description">' + movie.description + '</p>'
 
-  console.log(movieArray[0])
-  return '<div class="movie animation">' + movieTitle + movieInfo + cast(movieArray) + movieDescription + '</div>'
+  console.log(movie)
+  return '<div class="movie animation">' + movieTitle + movieInfo + cast(movie) + movieDescription + '</div>'
 }
-    </script>
+
+
+  </script>
 
 </head>
 
