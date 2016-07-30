@@ -10,17 +10,29 @@
 
     <script>
 function render(movieArray, displayWide) {
-    // This function will get called automagically.
-    // Replace this return call with the string of HTML that you
-    // generate:
+  // This function will get called automagically with the return call.
+
+  function cast(array){
     var castStr = ''
-    for(var i = 0; i < movieArray[0].cast.length; i++) {
-      castStr += '<li class="cast">' + movieArray[0].cast[i] + '</li>'
+    for(var i = 0; i < array[0].cast.length; i++) {
+      castStr += '<li class="cast">' + array[0].cast[i] + '</li>';
     }
-    console.log(movieArray[0])
-    return '<div>' + movieArray[0].name + '<ul>' + castStr + '</ul>' +'</div>'
+    return '<div> Starring: <ul>' + castStr + '</ul> </div>';
+  }
+
+  // wrap movie title within a h3 tag
+  var movieTitle = '<h3 class="name">' + movieArray[0].name + '</h3>';
+
+  // wrap the release date and genre in a paragraph.
+  // span tag is wrapped around the render infomation from object
+  var movieInfo = '<p> Release date: <span class="year">' + movieArray[0].year + '</span>, Genre: <span class="genre">' + movieArray[0].genre + '</span>.' + '</p>'
+  
+  // wrap the movie description in sp
+  var movieDescription = '<p class="description">' + movieArray[0].description + '</p>'
+
+  console.log(movieArray[0])
+  return '<div class="movie animation">' + movieTitle + movieInfo + cast(movieArray) + movieDescription + '</div>'
 }
-// Add additional function definitions here.
     </script>
 
 </head>
