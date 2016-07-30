@@ -14,9 +14,23 @@ function render(movieArray, displayWide) {
 
   // add all the movies together in one long string that will be return and displayed
   var allMovies = ""
-  movieArray.forEach(function (a) {
-    allMovies += renderMovieCompact(a)
-  })
+
+  function displayMovies(display) {
+    return movieArray.forEach(function (a) {
+      allMovies += display(a)
+    })
+  }
+
+  // based on screen width display either the moblie or desktop view
+  if(displayWide) {
+    allMovies += '<div class="big">';
+    displayMovies(renderMovie)
+    allMovies += '</div>'
+  } else {
+    allMovies += '<div class="small"><ul>';
+    displayMovies(renderMovieCompact)
+    allMovies += '</ul></div>'
+  }
 
   return allMovies
 
@@ -44,7 +58,6 @@ function renderMovie(movie) {
   // wrap the movie description in sp
   var movieDescription = '<p class="description">' + movie.description + '</p>'
 
-  console.log(movie)
   return '<div class="movie animation">' + movieTitle + movieInfo + cast(movie) + movieDescription + '</div>'
 }
 
