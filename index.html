@@ -13,7 +13,12 @@ function render(movieArray, displayWide) {
     // This function will get called automagically.
     // Replace this return call with the string of HTML that you
     // generate:
-    console.log(movieArray)
+    var castStr = ''
+    for(var i = 0; i < movieArray[0].cast.length; i++) {
+      castStr += '<li class="cast">' + movieArray[0].cast[i] + '</li>'
+    }
+    console.log(movieArray[0])
+    return '<div>' + movieArray[0].name + '<ul>' + castStr + '</ul>' +'</div>'
 }
 // Add additional function definitions here.
     </script>
