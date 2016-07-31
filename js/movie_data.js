@@ -1,10 +1,3 @@
-$(document).ready(function() {
-
-    var html = render(data, window.innerWidth > 500);
-
-    $('body').append(html);
-});
-
 var data = [
     {
 	name: 'Minions',
@@ -18,7 +11,7 @@ var data = [
 	year: 2001,
 	genre: 'animation',
 	cast: ['Mike Myers', 'Eddie Murphy', 'Cameron Diaz'],
-	description: 'Once upon a time, in a far away swamp, there lived an ogre named Shrek whose precious solitude is suddenly shattered by an invasion of annoying fairy tale characters. They were all banished from their kingdom by the evil Lord Farquaad. Determined to save their home -- not to mention his -- Shrek cuts a deal with Farquaad and sets out to rescue Princess Fiona to be Farquaad\'s bride. Rescuing the Princess may be small compared to her deep, dark secret.'
+
     },
     {
 	name: 'Zootopia',
