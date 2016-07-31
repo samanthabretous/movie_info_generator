@@ -1,0 +1,48 @@
+
+// ***********************************
+// IMPORTS
+// Import susy, breakpoint, resets and grids
+// ***********************************
+@import '../../bower_components/susy/sass/susy';
+@import '../../bower_components/breakpoint-sass/stylesheets/_breakpoint';
+
+
+// // ***********************************
+// // STYLES
+// // ***********************************
+
+.movie {
+    border: solid 1px;
+}
+
+.movie .description {
+}
+
+
+.animation {
+}
+
+.action {
+}
+
+.drama {
+}
+.big {
+    width: 80%;
+    margin: 25px auto;
+}
+
+.small {
+    width: 100%;
+}
+
+.small ul {
+    padding: 5px;
+}
+
+.small li {
+    list-style-type: none;
+}
+
+
+

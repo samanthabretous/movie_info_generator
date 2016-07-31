@@ -1,0 +1,30 @@
+{
+  "name": "movie_info_generator",
+  "version": "1.0.0",
+  "description": "For this homework you will write code that takes some data and renders it into a web page, using functions, objects and arrays. The data will be a list of movies with some information about each. You will receive this in the form of an array of simple JavaScript objects, which your code will use to create JavaScript strings that contain pieces of HTML. You will also add some simple CSS to style the page.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Samantha Bretous <sam@samanthabretous.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.13.0",
+    "del": "^2.2.1",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-compass": "^2.1.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.5.4",
+    "run-sequence": "^1.2.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samanthabretous/movie_info_generator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/samanthabretous/movie_info_generator/issues"
+  },
+  "homepage": "https://github.com/samanthabretous/movie_info_generator#readme"
+}
